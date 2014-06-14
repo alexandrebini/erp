@@ -3,8 +3,8 @@ class CreateSales < ActiveRecord::Migration
     create_table :sales do |t|
       t.references :customer, index: true
       t.references :vendor, index: true
-      t.integer :discount_cents, index: true
-      t.integer :total_cents, index: true
+      t.integer :discount, index: true, default: 0
+      t.integer :total, index: true
       t.timestamps
     end
   end

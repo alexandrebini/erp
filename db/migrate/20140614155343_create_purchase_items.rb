@@ -1,7 +1,7 @@
-class CreateSaleItems < ActiveRecord::Migration
+class CreatePurchaseItems < ActiveRecord::Migration
   def change
-    create_table :sale_items do |t|
-      t.references :sale, index: true
+    create_table :purchase_items do |t|
+      t.references :purchase, index: true
       t.references :product, index: true
       t.integer :price
       t.integer :quantity
