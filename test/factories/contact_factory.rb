@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :contact do
-    symbol { Contact::TYPES.sample }
-    value { Faker::Address.building_number }
+    type { %i(email phone mobile).sample }
+    value { Faker::PhoneNumber.phone_number }
   end
 end

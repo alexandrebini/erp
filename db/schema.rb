@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140614155343) do
+ActiveRecord::Schema.define(version: 20140615170934) do
 
   create_table "addresses", force: true do |t|
     t.integer  "addressable_id"
@@ -38,15 +38,11 @@ ActiveRecord::Schema.define(version: 20140614155343) do
   add_index "cities", ["state_id"], name: "index_cities_on_state_id"
 
   create_table "contacts", force: true do |t|
-    t.integer  "contactable_id"
-    t.string   "contactable_type"
-    t.string   "symbol"
+    t.integer  "type",       default: 0
     t.string   "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "contacts", ["contactable_id", "contactable_type"], name: "index_contacts_on_contactable_id_and_contactable_type"
 
   create_table "products", force: true do |t|
     t.string   "barcode"
@@ -103,14 +99,22 @@ ActiveRecord::Schema.define(version: 20140614155343) do
   add_index "sales", ["vendor_id"], name: "index_sales_on_vendor_id"
 
   create_table "states", force: true do |t|
-    t.string   "symbol"
+    t.string   "abbr"
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "taxpayers", force: true do |t|
+    t.integer  "type",       default: 0
+    t.string   "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "third_parties", force: true do |t|
     t.string   "type"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

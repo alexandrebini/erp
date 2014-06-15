@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  resources :states
+  root to: 'welcome#index'
+  resources :customers
+  resources :cities, only: :index
 end

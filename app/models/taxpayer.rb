@@ -1,6 +1,6 @@
-class Contact < ActiveRecord::Base
+class Taxpayer < ActiveRecord::Base
   self.inheritance_column = nil
-  enum type: %i(email phone mobile)
+  enum type: %i(cpf rg cpnj ie)
 
   validates :type, presence: true
   validates :value, presence: true

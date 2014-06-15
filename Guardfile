@@ -14,3 +14,12 @@ guard :minitest, spring: true do
   watch(%r{^test/.+_test\.rb$})
   watch(%r{^test/test_helper\.rb$}) { 'test' }
 end
+
+guard :migrate, spring: true  do
+  watch(%r{^db/migrate/(\d+).+\.rb})
+  watch('db/seeds.rb')
+end
+
+guard :bundler do
+  watch('Gemfile')
+end
