@@ -2,8 +2,8 @@
 
 .form-inputs
   = f.input :name
-  = f.simple_fields_for :address do |address|
-    = render partial: 'address/form', locals: { f: address }
+  = render partial: 'taxpayers/form', locals: { f: f }
+  = render partial: 'address/form', locals: { f: f }
 
 .form-actions
   = f.button :submit

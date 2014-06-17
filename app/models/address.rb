@@ -5,4 +5,8 @@ class Address < ActiveRecord::Base
   validates :street, presence: true
   validates :number, presence: true
   validates :postal_code, presence: true
+
+  def city_name=name
+    self.city = City.from_name(name)
+  end
 end

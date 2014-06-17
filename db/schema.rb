@@ -106,11 +106,14 @@ ActiveRecord::Schema.define(version: 20140615170934) do
   end
 
   create_table "taxpayers", force: true do |t|
-    t.integer  "type",       default: 0
+    t.integer  "third_party_id"
+    t.integer  "type",           default: 0
     t.string   "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "taxpayers", ["third_party_id"], name: "index_taxpayers_on_third_party_id"
 
   create_table "third_parties", force: true do |t|
     t.string   "type"

@@ -1,1 +1,1 @@
-json.array! @cities.pluck(:name)
+json.array! cities.map(&:with_state)
