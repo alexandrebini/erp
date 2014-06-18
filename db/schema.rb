@@ -38,11 +38,14 @@ ActiveRecord::Schema.define(version: 20140615170934) do
   add_index "cities", ["state_id"], name: "index_cities_on_state_id"
 
   create_table "contacts", force: true do |t|
-    t.integer  "type",       default: 0
+    t.integer  "third_party_id"
+    t.integer  "type",           default: 0
     t.string   "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "contacts", ["third_party_id"], name: "index_contacts_on_third_party_id"
 
   create_table "products", force: true do |t|
     t.string   "barcode"

@@ -1,17 +1,17 @@
-%h1 Listing customers
+= title :index, @customers
 
 %table.table.table-striped.table-condensed.table-hover
   %tr
+    %th Name
     %th
     %th
     %th
 
   - @customers.each do |customer|
     %tr
-      %td= link_to 'Show', customer
-      %td= link_to 'Edit', edit_customer_path(customer)
-      %td= link_to 'Destroy', customer, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= customer.name
+      = table_actions(customer)
 
 %br
 
-= link_to 'New Customer', new_customer_path
+= actions :index, @customers

@@ -3,6 +3,7 @@
 .form-inputs
   = f.input :name
   = render partial: 'taxpayers/form', locals: { f: f }
+  = render partial: 'contacts/form', locals: { f: f }
   = render partial: 'address/form', locals: { f: f }
 
 .form-actions

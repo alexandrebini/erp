@@ -20,7 +20,7 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
 
     if @customer.save
-      redirect_to @customer, notice: 'Customer was successfully created.'
+      respond_with @customer
     else
       render :new
     end
@@ -28,7 +28,7 @@ class CustomersController < ApplicationController
 
   def update
     if @customer.update(customer_params)
-      redirect_to @customer, notice: 'Customer was successfully updated.'
+      respond_with @customer
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class CustomersController < ApplicationController
 
   def destroy
     @customer.destroy
-    redirect_to customers_url, notice: 'Customer was successfully destroyed.'
+    respond_with @customer, location: customers_url
   end
 
   private
@@ -45,7 +45,6 @@ class CustomersController < ApplicationController
     end
 
     def customer_params
-      params[:customer]
-      # params.require(:state).permit(:abbr, :name)
+      params.require(:customer).permit!
     end
 end
