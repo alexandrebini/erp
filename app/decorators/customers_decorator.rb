@@ -1,0 +1,2 @@
+class CustomersDecorator < ThirdPartiesDecorator
+end

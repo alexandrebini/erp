@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
-  decorates_assigned :customer
+  decorates_assigned :customer, :customers
 
   def index
     @customers = Customer.all

@@ -1,3 +1,4 @@
-%legend Contacts
+%legend= f.object.l(:contacts)
+
 = f.simple_fields_for :contacts do |contact|
   = contact.input :value, label: t(contact.object.type)

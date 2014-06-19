@@ -16,8 +16,8 @@
           = link_to 'ERP', root_path, class: 'navbar-brand'
         .collapse.navbar-collapse
           %ul.nav.navbar-nav
-            %li= link_to 'Clientes', customers_path
-            %li= link_to '...', '#'
+            %li= link_to t(Customer, count: 2), customers_path
+            %li= link_to t(Sale, count: 2), sales_path
             %li= link_to '...', '#'
             %li= link_to '...', '#'
             %li= link_to '...', '#'

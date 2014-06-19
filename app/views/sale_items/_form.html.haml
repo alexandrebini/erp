@@ -1,0 +1,8 @@
+%legend= f.object.l(:sale_items)
+= f.simple_fields_for :sale_items do |item|
+  = item.simple_fields_for :product_attributes do |product|
+    = product.input :name, input_html: { rel: 'autocomplete', 'data-source' => products_path(format: :json) }
+  = item.input :price, readonly: true
+  = item.input :quantity
+  = item.input :discount
+  = item.input :total, readonly: true

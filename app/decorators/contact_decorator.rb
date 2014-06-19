@@ -1,3 +1,2 @@
-class ContactDecorator < Draper::Decorator
-  delegate_all
+class ContactDecorator < ApplicationDecorator
 end

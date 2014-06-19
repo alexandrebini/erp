@@ -1,0 +1,2 @@
+class SalesDecorator < ApplicationCollectionDecorator
+end

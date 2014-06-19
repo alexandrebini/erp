@@ -1,3 +1,3 @@
-%legend Taxpayer
+%legend= f.object.l(:taxpayers)
 = f.simple_fields_for :taxpayers do |taxpayer|
   = taxpayer.input :value, label: t(taxpayer.object.type)

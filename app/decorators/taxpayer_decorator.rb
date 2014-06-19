@@ -1,3 +1,2 @@
-class TaxpayerDecorator < Draper::Decorator
-  delegate_all
+class TaxpayerDecorator < ApplicationDecorator
 end

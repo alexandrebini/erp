@@ -1,7 +1,7 @@
-$ ->
+$(document).on 'ready page:load', ->
   $('[rel="autocomplete"]').each ->
     input = $(this)
-
+    console.log input
     source = new Bloodhound
       datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value')
       queryTokenizer: Bloodhound.tokenizers.whitespace

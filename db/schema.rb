@@ -48,7 +48,9 @@ ActiveRecord::Schema.define(version: 20140615170934) do
   add_index "contacts", ["third_party_id"], name: "index_contacts_on_third_party_id"
 
   create_table "products", force: true do |t|
+    t.string   "name"
     t.string   "barcode"
+    t.integer  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -81,6 +83,7 @@ ActiveRecord::Schema.define(version: 20140615170934) do
     t.integer  "product_id"
     t.integer  "price"
     t.integer  "quantity"
+    t.integer  "discount",   default: 0
     t.integer  "total"
     t.datetime "created_at"
     t.datetime "updated_at"

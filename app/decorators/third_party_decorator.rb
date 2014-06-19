@@ -1,6 +1,4 @@
-class ThirdPartyDecorator < Draper::Decorator
-  delegate_all
-
+class ThirdPartyDecorator < ApplicationDecorator
   def address
     object.build_address if object.address.blank?
     object.address.decorate
