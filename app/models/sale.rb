@@ -16,7 +16,6 @@ class Sale < ActiveRecord::Base
 
   def total
     if new_record?
-      p 'total getter', sale_items.map { |item| item.total }.sum
       sale_items.map { |item| item.total }.sum
     else
       super
@@ -24,7 +23,6 @@ class Sale < ActiveRecord::Base
   end
 
   def set_total
-    p 'total setter', total
     self.total = total
   end
 end

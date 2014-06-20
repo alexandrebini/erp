@@ -28,5 +28,6 @@ group :development, :test do
   gem 'guard-migrate', '1.1.0'
   gem 'guard-minitest', '2.3.0'
   gem 'minitest-reporters', '1.0.4'
+  gem 'pry', '0.10.0'
   gem 'spring', '1.1.3'
 end

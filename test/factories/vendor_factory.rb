@@ -1,4 +1,4 @@
 FactoryGirl.define do
-  factory :vendor, parent: :third_party do
+  factory :vendor, class: Vendor, parent: :third_party do
   end
 end

@@ -28,7 +28,7 @@ class SaleItem < ActiveRecord::Base
   end
 
   def total
-    if new_record?
+    if new_record? && product
       price * quantity - discount
     else
       super
