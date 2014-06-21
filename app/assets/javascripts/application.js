@@ -1,8 +1,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require underscore
+//= require angular/angular
 //= require cocoon
 //= require bootstrap-sass
 //= require typehead.js/dist/typeahead.bundle
-
 //= require_tree .

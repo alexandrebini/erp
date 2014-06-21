@@ -1,0 +1,9 @@
+%tr.nested-fields
+  = f.simple_fields_for :product_attributes do |product|
+    %td= product.input :name, input_html: { rel: 'autocomplete', 'data-source' => products_path(format: :json) }, label: false
+    %td= product.input :price, readonly: true, label: false, input_html: { 'ng-model' => 'price' }
+
+  %td= f.input :quantity, label: false, input_html: { 'ng-model' => 'quantity' }
+  %td= f.input :discount, label: false
+  %td= f.input :total, readonly: true, label: false, input_html: { value: '{{ price }}' }
+  %td= link_to_remove_association 'remove', f

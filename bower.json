@@ -7,8 +7,10 @@
   "vendor": {
     "name": "bower-rails generated vendor assets",
     "dependencies": {
+      "angular" : "1.2.18",
+      "underscore": "1.6.0",
       "bootstrap-sass" : "3.0.2",
-      "typehead.js" : "latest"
+      "typehead.js" : "0.10.2"
     }
   }
 }

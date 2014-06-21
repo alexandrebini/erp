@@ -7,14 +7,13 @@
       %th= f.object.sale_items.l(:quantity)
       %th= f.object.sale_items.l(:discount)
       %th= f.object.sale_items.l(:total)
+      %th
 
   %tbody
-    = f.simple_fields_for :sale_items do |item|
-      %tr
-        %td
-          = item.simple_fields_for :product_attributes do |product|
-            = product.input :name, input_html: { rel: 'autocomplete', 'data-source' => products_path(format: :json) }
-        %td= item.input :price, readonly: true
-        %td= item.input :quantity
-        %td= item.input :discount
-        %td= item.input :total, readonly: true
+    = f.simple_fields_for :sale_items do |sale_item|
+      = render 'sale_items/fields', f: sale_item
+
+  %tfoot
+    %tr
+      %td
+        = link_to_add_association 'add', f, :sale_items, partial: 'sale_items/fields', 'data-association-insertion-node' => 'tbody', 'data-association-insertion-method' => 'append'
