@@ -4,5 +4,6 @@
   = address.input :street
   = address.input :number
   = address.input :postal_code
-  = address.input :city_name, as: :string, input_html: { rel: 'autocomplete', 'data-source' => cities_path(format: :json) }
+  = address.simple_fields_for :city do |city|
+    = city.input :name, as: :string, input_html: { rel: 'autocomplete', 'data-source' => cities_path(format: :json) }
   = address.input :complement

@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 gem 'rails', '4.1.1'
 
-gem 'bootstrap-sass', '3.1.1.1'
+gem 'bower-rails', '0.7.3'
 gem 'cocoon', '1.2.6'
 gem 'coffee-rails', '4.0.1'
 gem 'draper', '1.3.0'
@@ -16,8 +17,11 @@ gem 'sass-rails', '4.0.3'
 gem 'simple_form', '3.1.0.rc1'
 gem 'sqlite3', '1.3.9'
 gem 'turbolinks', '2.2.2'
-gem 'twitter-typeahead-rails', '0.10.2'
 gem 'uglifier', '2.4.0'
+
+gem 'rails-assets-bootstrap-sass', '3.0.2'
+gem 'rails-assets-bootstrap-editable-table', '0.2.10'
+gem 'rails-assets-bootstrap3-typeahead', '3.0.3'
 
 group :development, :test do
   gem 'capistrano-rails', '1.1.1'
@@ -30,4 +34,5 @@ group :development, :test do
   gem 'minitest-reporters', '1.0.4'
   gem 'pry', '0.10.0'
   gem 'spring', '1.1.3'
+  gem 'terminal-notifier-guard', '1.5.3'
 end

@@ -29,7 +29,7 @@ class SaleItem < ActiveRecord::Base
 
   def total
     if new_record? && product
-      price * quantity - discount
+      price * quantity - discount.to_i
     else
       super
     end

@@ -5,7 +5,7 @@ class Sale < ActiveRecord::Base
 
   validates :customer, presence: true
   validates :vendor, presence: true
-  validates :sale_items, length: { minimum: 1 }, associated: true
+  validates :sale_items, associated: true, length: { minimum: 1 }
   validates :total, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :discount, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 

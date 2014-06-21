@@ -6,7 +6,8 @@ class Address < ActiveRecord::Base
   validates :number, presence: true
   validates :postal_code, presence: true
 
-  def city_name=name
-    self.city = City.from_name(name)
+  def city_attributes=(attrs)
+    name = attrs[:name].split('-').first.strip
+    self.city = City.where(name: name).first
   end
 end

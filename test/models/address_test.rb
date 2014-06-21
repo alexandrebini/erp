@@ -21,7 +21,9 @@ class AddressTest < ActiveSupport::TestCase
     assert true, build(:address, postal_code: '16200-000').valid?
   end
 
-  test 'should set city by name' do
-    skip
+  test 'should be able to set the city by name' do
+    create :city, name: 'Foo'
+    refute false, build(:address, city: nil, city_attributes: { name: 'Bar' }).valid?
+    assert true, build(:address, city: nil, city_attributes: { name: 'Foo' }).valid?
   end
 end
