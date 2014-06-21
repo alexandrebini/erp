@@ -19,16 +19,13 @@ gem 'sqlite3', '1.3.9'
 gem 'turbolinks', '2.2.2'
 gem 'uglifier', '2.4.0'
 
-gem 'rails-assets-bootstrap-sass', '3.0.2'
-gem 'rails-assets-bootstrap-editable-table', '0.2.10'
-gem 'rails-assets-bootstrap3-typeahead', '3.0.3'
-
 group :development, :test do
   gem 'capistrano-rails', '1.1.1'
   gem 'factory_girl_rails', '4.4.1'
   gem 'faker', '1.3.0'
   gem 'guard', '2.6.1'
   gem 'guard-bundler', '2.0.0'
+  gem 'guard-bower', '0.0.1'
   gem 'guard-migrate', '1.1.0'
   gem 'guard-minitest', '2.3.0'
   gem 'minitest-reporters', '1.0.4'

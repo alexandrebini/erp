@@ -1,10 +1,9 @@
 = simple_form_for sale do |f|
   = f.error_notification
 
-  = f.association :customer
-  = f.association :vendor
-
   .form-inputs
+    = f.association :customer
+    = f.association :vendor
     = render partial: 'sale_items/form', locals: { f: f }
 
   .form-actions

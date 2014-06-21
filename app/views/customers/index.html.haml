@@ -1,16 +1,18 @@
 = title :index, customers
 
 %table.table.table-striped.table-condensed.table-hover
-  %tr
-    %th= customers.l(:name)
-    %th
-    %th
-    %th
-
-  - customers.each do |customer|
+  %thead
     %tr
-      %td= customer.name
-      = table_actions(customer)
+      %th= customers.l(:name)
+      %th
+      %th
+      %th
+
+  %tbody
+    - customers.each do |customer|
+      %tr
+        %td= customer.name
+        = table_actions(customer)
 
 %br
 

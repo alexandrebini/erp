@@ -1,8 +1,20 @@
 %legend= f.object.l(:sale_items)
-= f.simple_fields_for :sale_items do |item|
-  = item.simple_fields_for :product_attributes do |product|
-    = product.input :name, input_html: { rel: 'autocomplete', 'data-source' => products_path(format: :json) }
-  = item.input :price, readonly: true
-  = item.input :quantity
-  = item.input :discount
-  = item.input :total, readonly: true
+%table.table.table-striped.table-condensed.table-hover
+  %thead
+    %tr
+      %th= f.object.sale_items.l(:product)
+      %th= f.object.sale_items.l(:price)
+      %th= f.object.sale_items.l(:quantity)
+      %th= f.object.sale_items.l(:discount)
+      %th= f.object.sale_items.l(:total)
+
+  %tbody
+    = f.simple_fields_for :sale_items do |item|
+      %tr
+        %td
+          = item.simple_fields_for :product_attributes do |product|
+            = product.input :name, input_html: { rel: 'autocomplete', 'data-source' => products_path(format: :json) }
+        %td= item.input :price, readonly: true
+        %td= item.input :quantity
+        %td= item.input :discount
+        %td= item.input :total, readonly: true
