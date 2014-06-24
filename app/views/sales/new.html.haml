@@ -3,3 +3,16 @@
 = render 'form'
 
 = actions :new, sale
+
+%div{ "ng-init" => 'foo = [{}, {}]' }
+
+%div{ 'ng-model' => 'foo[0]' }
+  %input{ 'ng-model' => 'test' }
+  %input{ 'ng-model' => 'test2' }
+  %input{ 'value' => '{{ test * test2 }}' }
+
+%input{ 'ng-model' => 'foo[1].test' }
+%input{ 'ng-model' => 'foo[1].test2' }
+%input{ 'value' => '{{ foo[1].test * foo[1].test2 }}' }
+%br
+%input{ value: '{{ foo[0].test * foo[1].test }}' }

@@ -34,7 +34,7 @@ class Autocomplete
     displayKey = @displayKey(item)
     namePrefix = @input.attr('name').replace("[#{ displayKey }]", '')
     _.each _.omit(item, displayKey), (value, key) ->
-      $("[name='#{ namePrefix }[#{ key }]']").val value
+      $('[name="#{ namePrefix }[#{ key }]"]').val value
 
 $(document).on 'ready page:load', ->
   $('[rel="autocomplete"]').each ->
