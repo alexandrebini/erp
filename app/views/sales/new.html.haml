@@ -4,15 +4,18 @@
 
 = actions :new, sale
 
-%div{ "ng-init" => 'foo = [{}, {}]' }
+%div{ "ng-init" => 'foo = []' }
 
-%div{ 'ng-model' => 'foo[0]' }
-  %input{ 'ng-model' => 'test' }
-  %input{ 'ng-model' => 'test2' }
-  %input{ 'value' => '{{ test * test2 }}' }
+%div{ "ng-init" => 'foo[0] = {}' }
+  %input{ 'ng-model' => 'foo[0].test', 'ng-initial' => true }
+  %input{ 'ng-model' => 'foo[0].test2' }
+  %input{ 'value' => '{{ foo[0].test * foo[0].test2 }}' }
 
-%input{ 'ng-model' => 'foo[1].test' }
-%input{ 'ng-model' => 'foo[1].test2' }
-%input{ 'value' => '{{ foo[1].test * foo[1].test2 }}' }
+%div{ "ng-init" => 'foo[1] = {}' }
+  %input{ 'ng-model' => 'foo[1].test' }
+  %input{ 'ng-model' => 'foo[1].test2' }
+  %input{ 'value' => '{{ foo[1].test * foo[1].test2 }}' }
+
 %br
-%input{ value: '{{ foo[0].test * foo[1].test }}' }
+
+%strong {{ foo|sumByKey:'test' }}
