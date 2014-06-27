@@ -17,3 +17,7 @@
     %tr
       %td
         = link_to_add_association 'add', f, :sale_items, partial: 'sale_items/fields', 'data-association-insertion-node' => 'tbody', 'data-association-insertion-method' => 'append'
+      %td
+      %td
+      %td= f.object.sale_items.l(:total)
+      %td{ 'data-formula' => '$sale_sale_items_attributes_0_quantity * $sale_sale_items_attributes_0_product_attributes_price'  }

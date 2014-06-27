@@ -34,8 +34,16 @@ class Autocomplete
     displayKey = @displayKey(item)
     namePrefix = @input.attr('name').replace("[#{ displayKey }]", '')
     _.each _.omit(item, displayKey), (value, key) ->
-      $("[name='#{ namePrefix }[#{ key }]']").val value
+      $("[name='#{ namePrefix }[#{ key }]']")
+        .val(value)
+        .trigger('change')
+
+  @apply: (element) ->
+    $(element).find('[rel="autocomplete"]').each ->
+      new Autocomplete(this)
 
 $(document).on 'ready page:load', ->
-  $('[rel="autocomplete"]').each ->
-    new Autocomplete(this)
+  Autocomplete.apply(this)
+
+  $(document).on 'DOMNodeInserted', (e) ->
+    Autocomplete.apply e.target
