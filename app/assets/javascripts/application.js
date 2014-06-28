@@ -1,9 +1,0 @@
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require underscore
-//= require cocoon
-//= require bootstrap-sass
-//= require typehead.js/dist/typeahead.bundle
-//= require calx/jquery-calx-1.1.9
-//= require_tree .

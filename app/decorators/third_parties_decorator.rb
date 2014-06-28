@@ -1,2 +1,0 @@
-class ThirdPartiesDecorator < ApplicationCollectionDecorator
-end

@@ -1,1 +1,0 @@
-json.array! cities.map(&:with_state)

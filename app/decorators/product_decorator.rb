@@ -1,2 +1,0 @@
-class ProductDecorator < ApplicationDecorator
-end

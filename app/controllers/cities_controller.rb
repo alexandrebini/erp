@@ -1,7 +1,6 @@
 class CitiesController < ApplicationController
-  decorates_assigned :cities
-
   def index
     @cities = City.includes(:state)
+    render json: @cities
   end
 end

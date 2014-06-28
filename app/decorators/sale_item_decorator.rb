@@ -1,2 +1,0 @@
-class SaleItemDecorator < ApplicationDecorator
-end

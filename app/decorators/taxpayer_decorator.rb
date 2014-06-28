@@ -1,2 +1,0 @@
-class TaxpayerDecorator < ApplicationDecorator
-end

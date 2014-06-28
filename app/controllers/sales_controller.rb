@@ -1,6 +1,5 @@
 class SalesController < ApplicationController
   before_action :set_sale, only: [:show, :edit, :update, :destroy]
-  decorates_assigned :sale, :sales
 
   def index
     @sales = Sale.all
@@ -22,8 +21,6 @@ class SalesController < ApplicationController
     if @sale.save
       respond_with @sale
     else
-      p '----------'
-      p @sale.errors
       render :new
     end
   end

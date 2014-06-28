@@ -1,9 +1,0 @@
-%legend= f.object.l(:address)
-
-= f.simple_fields_for :address do |address|
-  = address.input :street
-  = address.input :number
-  = address.input :postal_code
-  = address.simple_fields_for :city do |city|
-    = city.input :name, as: :string, input_html: { rel: 'autocomplete', 'data-source' => cities_path(format: :json) }
-  = address.input :complement
