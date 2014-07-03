@@ -1,41 +1,36 @@
 class CustomersController < ApplicationController
-  before_action :set_customer, only: [:show, :edit, :update, :destroy]
+  before_action :set_customer, only: [:show, :update, :destroy]
 
   def index
     @customers = Customer.all
+    render json: @customers
   end
 
   def show
-  end
-
-  def new
-    @customer = Customer.new
-  end
-
-  def edit
+    render json: @customer
   end
 
   def create
     @customer = Customer.new(customer_params)
 
     if @customer.save
-      respond_with @customer
+      render json: @customer
     else
-      render :new
+      render json: { errors: @customer.errors }, status: :unprocessable_entity
     end
   end
 
   def update
     if @customer.update(customer_params)
-      respond_with @customer
+      render json: @customer
     else
-      render :edit
+      render json: { errors: @customer.errors }, status: :unprocessable_entity
     end
   end
 
   def destroy
     @customer.destroy
-    respond_with @customer, location: customers_url
+    render json: @customer
   end
 
   private
